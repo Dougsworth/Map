@@ -1,0 +1,69 @@
+.my-map {
+  position: relative;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 655px;
+}
+.mappath {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.map-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solidblack;
+}
+
+@media screen and (max-width: 900px) {
+  .leaflet-container,
+  .mapbox {
+    background: none !important;
+    width: 100% !important;
+  }
+  /*   map content scales down everything */
+  .map-content {
+    transform: scale(0.9);
+  }
+  .jamaica-parishes {
+    transform: scale(0.9);
+  }
+  .leaflet-container,
+  .mapbox {
+    transform: scale(0.8);
+  }
+}
+
+.leaflet-container {
+  background: none !important;
+}
+
+.mapbox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.mappath path:hover {
+  fill: #e48683 !important;
+  /* There's no fill so the interior does not catch mouse events by default and therefore hover doesn't react to that. */
+  pointer-events: all !important;
+  transition: 0.3s !important;
+}
+
+@media screen and (max-width: 540px) {
+  .leaflet-container,
+  .mapbox {
+    width: 540px !important;
+  }
+}
+
+@media screen and (min-width: 540px) and (max-width: 900px) {
+  .leaflet-container,
+  .mapbox {
+    width: 561px !important;
+  }
+}
